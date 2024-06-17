@@ -5,8 +5,7 @@ close all;
 disp('Section-1 Complete')
 %figure,plot(x)
 %%
-[x,Fs] = audioread("C:\Users\seema\Downloads\Gaussian-Noise-Removal-Using-Lowpass-
-Filter-main\Gaussian-Noise-Removal-Using-Lowpass-Filter-main\dsp+new.wav");
+[x,Fs] = audioread('dsp+new.wav');
 %sound(x,Fs);
 N = size(x,1);% length of signal
 f = Fs*(0:N-1)*N;% frequency range
@@ -23,9 +22,7 @@ audiowrite('noisy2.wav',noisy2,Fs);
 audiowrite('noisy3.wav',noisy3,Fs);
 disp('Section-3 Complete');
 %%
-[audio,audio_freqs]=audioread("C:\Users\seema\Downloads\Gaussian-Noise-Removal-
-Using-Lowpass-Filter-main\Gaussian-Noise-Removal-Using-Lowpass-Filter-
-main\dsp+new.wav");
+[audio,audio_freqs]=audioread('dsp+new.wav');
 Length=length(audio);
 df=audio_freqs/Length;
 freq_audio=0:df:audio_freqs/2-df;
@@ -86,8 +83,7 @@ xlabel('Frequency(Hz)');
 ylabel('Amplitude');
 disp('Section-5 Complete');
 %%
-load("C:\Users\seema\Downloads\Gaussian-Noise-Removal-Using-Lowpass-Filter-
-main\Gaussian-Noise-Removal-Using-Lowpass-Filter-main\workspace.mat");
+load('workspace.mat');
 filtered_signal1 = filter(Hd1,xn1);
 filtered_signal2 = filter(Hd1,xn2);
 filtered_signal3 = filter(Hd1,xn3);
